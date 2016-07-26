@@ -12,6 +12,15 @@
 		769050771D44085000247718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 769050751D44085000247718 /* Main.storyboard */; };
 		769050791D44085000247718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 769050781D44085000247718 /* Assets.xcassets */; };
 		7690507C1D44085000247718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7690507A1D44085000247718 /* LaunchScreen.storyboard */; };
+		769050841D440B5400247718 /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 769050831D440B5400247718 /* Minecraft.ttf */; };
+		769050861D440F4600247718 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769050851D440F4600247718 /* Player.swift */; };
+		769050881D4419A300247718 /* intro.wav in Resources */ = {isa = PBXBuildFile; fileRef = 769050871D4419A300247718 /* intro.wav */; };
+		7690508C1D4419BE00247718 /* sword.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 769050891D4419BE00247718 /* sword.mp3 */; };
+		7690508D1D4419BE00247718 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7690508A1D4419BE00247718 /* death.wav */; };
+		7690508E1D4419BE00247718 /* goblindeath.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7690508B1D4419BE00247718 /* goblindeath.wav */; };
+		76BBD29E1D45576E00257CDB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BBD29D1D45576E00257CDB /* Game.swift */; };
+		76BBD2A01D45577C00257CDB /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BBD29F1D45577C00257CDB /* Enemy.swift */; };
+		76BE108E1D45DFBA00F45A9E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BE108D1D45DFBA00F45A9E /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		769050781D44085000247718 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7690507B1D44085000247718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7690507D1D44085000247718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		769050831D440B5400247718 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
+		769050851D440F4600247718 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		769050871D4419A300247718 /* intro.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = intro.wav; sourceTree = "<group>"; };
+		769050891D4419BE00247718 /* sword.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sword.mp3; sourceTree = "<group>"; };
+		7690508A1D4419BE00247718 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
+		7690508B1D4419BE00247718 /* goblindeath.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = goblindeath.wav; sourceTree = "<group>"; };
+		76BBD29D1D45576E00257CDB /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		76BBD29F1D45577C00257CDB /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		76BE108D1D45DFBA00F45A9E /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +72,21 @@
 		769050701D44085000247718 /* dual-fighter */ = {
 			isa = PBXGroup;
 			children = (
+				769050871D4419A300247718 /* intro.wav */,
+				769050891D4419BE00247718 /* sword.mp3 */,
+				7690508A1D4419BE00247718 /* death.wav */,
+				7690508B1D4419BE00247718 /* goblindeath.wav */,
+				769050831D440B5400247718 /* Minecraft.ttf */,
 				769050711D44085000247718 /* AppDelegate.swift */,
 				769050731D44085000247718 /* ViewController.swift */,
 				769050751D44085000247718 /* Main.storyboard */,
 				769050781D44085000247718 /* Assets.xcassets */,
 				7690507A1D44085000247718 /* LaunchScreen.storyboard */,
 				7690507D1D44085000247718 /* Info.plist */,
+				769050851D440F4600247718 /* Player.swift */,
+				76BBD29D1D45576E00257CDB /* Game.swift */,
+				76BBD29F1D45577C00257CDB /* Enemy.swift */,
+				76BE108D1D45DFBA00F45A9E /* Character.swift */,
 			);
 			path = "dual-fighter";
 			sourceTree = "<group>";
@@ -123,8 +150,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				769050881D4419A300247718 /* intro.wav in Resources */,
 				7690507C1D44085000247718 /* LaunchScreen.storyboard in Resources */,
 				769050791D44085000247718 /* Assets.xcassets in Resources */,
+				769050841D440B5400247718 /* Minecraft.ttf in Resources */,
+				7690508E1D4419BE00247718 /* goblindeath.wav in Resources */,
+				7690508C1D4419BE00247718 /* sword.mp3 in Resources */,
+				7690508D1D4419BE00247718 /* death.wav in Resources */,
 				769050771D44085000247718 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +169,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				769050741D44085000247718 /* ViewController.swift in Sources */,
+				76BBD2A01D45577C00257CDB /* Enemy.swift in Sources */,
+				769050861D440F4600247718 /* Player.swift in Sources */,
+				76BE108E1D45DFBA00F45A9E /* Character.swift in Sources */,
 				769050721D44085000247718 /* AppDelegate.swift in Sources */,
+				76BBD29E1D45576E00257CDB /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +323,7 @@
 				769050821D44085000247718 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
