@@ -44,34 +44,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func attackPlayer1(sender: AnyObject) {
-        let atkPower = player2.randomizeAttackPower()
-        playSound(&audioPlayer,soundName: "sword",type: "mp3", nbLoop: 0)
-        player1.beAttacked(atkPower)
-        if !player1.isAlive()
-        {
-            if player1.name == "Enemy" {
-                playSound(&audioPlayer,soundName: "goblindeath",type: "wav", nbLoop: 0)
-            } else {
-                playSound(&audioPlayer,soundName: "death",type: "wav", nbLoop: 0)
-            }
-            player1AtkBtn.hidden = true
-            player2AtkBtn.hidden = true
-            NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.endGame(_:)), userInfo: "player2", repeats: false)
-        } else {
-            player1HpLbl.text = "\(player1.hp) HP"
-            player1AtkBtn.hidden = true
-            player2AtkBtn.hidden = true
-            NSTimer.scheduledTimerWithTimeInterval(Double(arc4random_uniform(UInt32(3))) + 1, target: self, selector: #selector(ViewController.showAttackButtons), userInfo: nil, repeats: false)
-        }
+        attackPlayer(player2, defend: player1, playerAttack: "player2")
     }
     
     @IBAction func attackPlayer2(sender: AnyObject) {
-        let atkPower = player1.randomizeAttackPower()
+        attackPlayer(player1, defend: player2, playerAttack: "player1")
+    }
+    
+    func attackPlayer(attack: Character, defend: Character, playerAttack: String) {
+        let atkPower = attack.randomizeAttackPower()
         playSound(&audioPlayer,soundName: "sword",type: "mp3", nbLoop: 0)
-        player2.beAttacked(atkPower)
-        if !player2.isAlive()
+        defend.beAttacked(atkPower)
+        if !defend.isAlive()
         {
-            if player2.name == "Enemy" {
+            if defend.name == "Enemy" {
                 playSound(&audioPlayer,soundName: "goblindeath",type: "wav", nbLoop: 0)
             } else {
                 playSound(&audioPlayer,soundName: "death",type: "wav", nbLoop: 0)
@@ -80,14 +66,16 @@ class ViewController: UIViewController {
             player2AtkBtn.hidden = true
             NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.endGame(_:)), userInfo: "player1", repeats: false)
         } else {
-            player2HpLbl.text = "\(player2.hp) HP"
+            if playerAttack == "player1" {
+                player2HpLbl.text = "\(defend.hp) HP"
+            } else {
+                player1HpLbl.text = "\(defend.hp) HP"
+            }
             player1AtkBtn.hidden = true
             player2AtkBtn.hidden = true
-            NSTimer.scheduledTimerWithTimeInterval(Double(arc4random_uniform(UInt32(3))) + 1, target: self, selector: #selector(ViewController.showAttackButtons), userInfo: nil, repeats: false)
-
+            NSTimer.scheduledTimerWithTimeInterval(Double(arc4random_uniform(UInt32(2))) + 1, target: self, selector: #selector(ViewController.showAttackButtons), userInfo: nil, repeats: false)
+            
         }
-
-        
     }
 
     @IBAction func selectGoodGuy(sender: AnyObject) {
