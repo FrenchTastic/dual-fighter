@@ -12,7 +12,7 @@ class Enemy: Character {
     override init(){
         super.init()
         self.hp = 120
-        self.attackPwr = 15
+        self.attackPwr = 40
         self.name = "Enemy"
     }
 }

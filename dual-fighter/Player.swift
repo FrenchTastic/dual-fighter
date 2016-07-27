@@ -13,7 +13,7 @@ class Player : Character{
     override init() {
         super.init()
         self.hp = 100
-        self.attackPwr = 20
+        self.attackPwr = 50
         self.name = "Player"
     }
 }

@@ -59,6 +59,9 @@ class ViewController: UIViewController {
             NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.endGame(_:)), userInfo: "player2", repeats: false)
         } else {
             player1HpLbl.text = "\(player1.hp) HP"
+            player1AtkBtn.hidden = true
+            player2AtkBtn.hidden = true
+            NSTimer.scheduledTimerWithTimeInterval(Double(arc4random_uniform(UInt32(3))) + 1, target: self, selector: #selector(ViewController.showAttackButtons), userInfo: nil, repeats: false)
         }
     }
     
@@ -78,7 +81,13 @@ class ViewController: UIViewController {
             NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.endGame(_:)), userInfo: "player1", repeats: false)
         } else {
             player2HpLbl.text = "\(player2.hp) HP"
+            player1AtkBtn.hidden = true
+            player2AtkBtn.hidden = true
+            NSTimer.scheduledTimerWithTimeInterval(Double(arc4random_uniform(UInt32(3))) + 1, target: self, selector: #selector(ViewController.showAttackButtons), userInfo: nil, repeats: false)
+
         }
+
+        
     }
 
     @IBAction func selectGoodGuy(sender: AnyObject) {
@@ -87,6 +96,11 @@ class ViewController: UIViewController {
     
     @IBAction func selectBadGuy(sender: AnyObject) {
         selectPlayer("enemy")
+    }
+    
+    func showAttackButtons() {
+        player1AtkBtn.hidden = false
+        player2AtkBtn.hidden = false
     }
     
     func selectPlayer(player: String) {
