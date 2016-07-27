@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         choosePlayerLbl.text = "Player 1: Choose Your Fighter !!"
-        playSound(&soundPlayer,soundName: "intro", type: "wav", nbLoop: -1)
+        playSound(&soundPlayer,soundName: "intro", type: "mp3", nbLoop: -1)
     }
 
     @IBAction func attackPlayer1(sender: AnyObject) {
