@@ -157,10 +157,6 @@ class ViewController: UIViewController {
         selectGoodBtn.hidden = false
     }
     
-    func strangeSound(){
-        playSound(&audioPlayer, soundName: "goblindeath", type: "wav", nbLoop: 0)
-    }
-    
     func playSound(inout player :AVAudioPlayer!, soundName: String, type: String, nbLoop: Int)
     {
         let path = NSBundle.mainBundle().pathForResource(soundName, ofType: type)
